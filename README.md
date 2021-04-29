@@ -2,6 +2,7 @@
 
 ## Quickstart
 ```
+sudo apt install pkg-config
 git clone https://github.com/ahmetb/kubectx.git ~/.kubectx
 COMPDIR=$(pkg-config --variable=completionsdir bash-completion)
 sudo ln -sf ~/.kubectx/completion/kubens.bash $COMPDIR/kubens
@@ -17,6 +18,9 @@ export PATH=~/.kubectx:$PATH
 source ~/kube-ps1/kube-ps1.sh
 PS1='[\u@\h \W $(kube_ps1)]\$ '
 
-alias k=kubectl
+alias k="kubectl"
+alias kd="kubectl describe"
+alias kg="kubectl get"
+alias kl="kubectl logs -f"
 EOF
 ```
