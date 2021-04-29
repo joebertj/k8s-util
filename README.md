@@ -18,9 +18,16 @@ export PATH=~/.kubectx:$PATH
 source ~/kube-ps1/kube-ps1.sh
 PS1='[\u@\h \W $(kube_ps1)]\$ '
 
+source <(kubectl completion bash)
 alias k="kubectl"
+alias ka="kubectl apply -f"
 alias kd="kubectl describe"
 alias kg="kubectl get"
 alias kl="kubectl logs -f"
+complete -F __start_kubectl k
+complete -F __start_kubectl ka
+complete -F __start_kubectl kd
+complete -F __start_kubectl kg
+complete -F __start_kubectl kl
 EOF
 ```
